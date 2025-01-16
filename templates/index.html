@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Prediksi Mahasiswa Diterima</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Prediksi Mahasiswa Diterima</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="n">Jumlah Mahasiswa (n):</label>
+                <input type="number" id="n" name="n" placeholder="Masukkan jumlah mahasiswa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="p">Probabilitas Diterima (p):</label>
+                <input type="number" id="p" name="p" step="0.01" placeholder="Masukkan probabilitas (0-1)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="k">Jumlah Mahasiswa Diterima (k):</label>
+                <input type="number" id="k" name="k" placeholder="Masukkan jumlah diterima" required>
+            </div>
+
+            <button type="submit">Hitung Probabilitas</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>Hasil:</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
